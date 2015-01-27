@@ -1,7 +1,7 @@
-dokku-bower-install
+dokku-gulp-build
 ===================
 
-Dokku pluging to install bower dependecies.
+Dokku plugin to run gulp build.
 
 *NOTE*: it's developed and tested on the latest `progrium/buildstep` which uses the latest `heroku-buildpack-nodejs`.
 
@@ -13,13 +13,13 @@ $ docker build -t progrium/buildstep github.com/progrium/buildstep
 
 ## Description
 
-This plugin will inject the `/app/.bower` shell script that's going to be executed on the `pre-deploy` stage. If the root of the application contains a `bower.json` file, then bower and all dependencies are installed.
+This plugin will inject the `/app/.gulp` shell script that's going to be executed on the `pre-deploy` stage. If the root of the application contains a `gulpfile.js` file, then gulp will install and trigger `gulp build`
 
 ## Usage
 
 ```
 cd /var/lib/dokku/plugins
-git clone https://github.com/alexanderbeletsky/dokku-bower-install
+git clone https://github.com/thepuzzlemaster/dokku-gulp-build
 dokku plugins-install
 ```
 
